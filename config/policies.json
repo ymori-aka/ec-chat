@@ -86,8 +86,14 @@
         "export": "AkamaiAIFirewallV2InboundPolicy",
         "module": "$import(@zuplo/runtime)",
         "options": {
-          "configurationId": "",
-          "api-key": ""
+          "configurationId": "$env(AKAMAI_AI_FIREWALL_CONFIGURATION_ID)",
+          "api-key": "$env(AKAMAI_AI_FIREWALL_API_KEY)",
+          "onUnknownShape": "deny",
+          "onError": "block",
+          "streamingAccumulation": {
+            "enabled": true,
+            "eventsInterval": 5
+          }
         }
       },
       "name": "akamai-ai-firewall-v2-inbound",

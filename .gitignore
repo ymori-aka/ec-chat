@@ -6,3 +6,8 @@ node_modules/
 # OS Stuff
 
 .DS_Store
+
+# Local secrets
+.env
+.env.local
+.env.zuplo
