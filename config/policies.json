@@ -45,7 +45,12 @@
         "options": {
           "models": {
             "completions": {
-              "allowList": ["openai/gpt-4o-mini"]
+              "allowList": [
+                "gemma4/google_gemma-4-26B-A4B-it-Q4_K_M.gguf",
+                "gemma4/gemma-4-26b",
+                "qwen38/qwen3.8-27b",
+                "deepseek/deepseek-v4-flash"
+              ]
             }
           }
         }
@@ -60,7 +65,7 @@
         "options": {
           "models": {
             "completions": {
-              "fallback": "openai/gpt-4o-mini"
+              "fallback": "gemma4/gemma-4-26b"
             }
           },
           "fallbackTimeoutSeconds": 60
@@ -170,9 +175,18 @@
         "export": "AIGatewaySmartRouterInboundPolicy",
         "module": "$import(@zuplo/runtime)",
         "options": {
-          "classifierAppID": "",
-          "classifierAppApiKey": "",
-          "classifierModel": "openai/gpt-4o-mini"
+          "classifierAppID": "$env(CLASSIFIER_APP_ID)",
+          "classifierAppApiKey": "$env(CLASSIFIER_APP_API_KEY)",
+          "classifierModel": "classifier/qwen2.5-1.5b-instruct",
+          "smartRoutingEnabled": true,
+          "minConfidenceForRouting": 0.5,
+          "classifierTimeoutMs": 8000,
+          "maxPromptChars": 8000,
+          "modelsByComplexity": {
+            "low": "gemma4/gemma-4-26b",
+            "medium": "qwen38/qwen3.8-27b",
+            "high": "deepseek/deepseek-v4-flash"
+          }
         }
       },
       "name": "ai-gateway-smart-router-inbound",
