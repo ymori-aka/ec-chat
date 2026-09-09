@@ -172,6 +172,15 @@
     },
     {
       "handler": {
+        "export": "default",
+        "module": "$import(./modules/smart-router-headers)",
+        "options": {}
+      },
+      "name": "smart-router-headers-outbound",
+      "policyType": "custom-code-outbound"
+    },
+    {
+      "handler": {
         "export": "AIGatewaySmartRouterInboundPolicy",
         "module": "$import(@zuplo/runtime)",
         "options": {

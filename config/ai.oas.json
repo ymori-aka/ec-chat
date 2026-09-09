@@ -45,6 +45,9 @@
             "inbound": [
               "ai-gateway-configuration-loader-v2-inbound",
               "ai-gateway-configuration-executor-v2-inbound"
+            ],
+            "outbound": [
+              "smart-router-headers-outbound"
             ]
           }
         }
