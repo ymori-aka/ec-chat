@@ -185,7 +185,7 @@
           "modelsByComplexity": {
             "low": "gemma4/gemma-4-26b",
             "medium": "qwen38/qwen3.8-27b",
-            "high": "deepseek/deepseek-v4-flash"
+            "high": "qwen38/qwen3.8-27b"
           }
         }
       },
