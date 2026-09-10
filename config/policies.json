@@ -193,8 +193,8 @@
           "maxPromptChars": 8000,
           "modelsByComplexity": {
             "low": "gemma4/gemma-4-26b",
-            "medium": "qwen38/qwen3.8-27b",
-            "high": "qwen38/qwen3.8-27b"
+            "medium": "gemma4/gemma-4-26b",
+            "high": "gemma4/gemma-4-26b"
           }
         }
       },
