@@ -49,7 +49,9 @@
                 "gemma4/google_gemma-4-26B-A4B-it-Q4_K_M.gguf",
                 "gemma4/gemma-4-26b",
                 "qwen38/qwen3.8-27b",
-                "deepseek/deepseek-v4-flash"
+                "deepseek/deepseek-v4-flash",
+                "gptoss/gpt-oss-120b",
+                "akcc/deepseek-v4-flash"
               ]
             }
           }
@@ -186,15 +188,15 @@
         "options": {
           "classifierAppID": "$env(CLASSIFIER_APP_ID)",
           "classifierAppApiKey": "$env(CLASSIFIER_APP_API_KEY)",
-          "classifierModel": "classifier/qwen2.5-1.5b-instruct",
+          "classifierModel": "classifier/qwen3.5-4b-router",
           "smartRoutingEnabled": true,
           "minConfidenceForRouting": 0.5,
           "classifierTimeoutMs": 8000,
           "maxPromptChars": 8000,
           "modelsByComplexity": {
             "low": "gemma4/gemma-4-26b",
-            "medium": "gemma4/gemma-4-26b",
-            "high": "gemma4/gemma-4-26b"
+            "medium": "gptoss/gpt-oss-120b",
+            "high": "akcc/deepseek-v4-flash"
           }
         }
       },
