@@ -81,7 +81,7 @@
         "export": "AIGatewaySemanticCacheV2InboundPolicy",
         "module": "$import(@zuplo/runtime)",
         "options": {
-          "semanticTolerance": 0.4,
+          "semanticTolerance": 0.1,
           "expirationSecondsTtl": 3600
         }
       },
