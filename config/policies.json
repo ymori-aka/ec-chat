@@ -202,6 +202,26 @@
       },
       "name": "ai-gateway-smart-router-inbound",
       "policyType": "ai-gateway-smart-router"
+    },
+    {
+      "handler": {
+        "export": "default",
+        "module": "$import(./modules/laya-router)",
+        "options": {
+          "url": "$env(LAYA_URL)",
+          "apiKey": "$env(LAYA_API_KEY)",
+          "timeoutMs": 2500,
+          "minConfidence": 0.35,
+          "classifierLabel": "laya/score",
+          "modelsByComplexity": {
+            "low": "gemma4/gemma-4-26b",
+            "medium": "gptoss/gpt-oss-120b",
+            "high": "akcc/deepseek-v4-flash"
+          }
+        }
+      },
+      "name": "laya-router-inbound",
+      "policyType": "custom-code-inbound"
     }
   ]
 }
